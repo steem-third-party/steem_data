@@ -13,7 +13,7 @@ module SteemData
       base.scope :unvote, lambda { vote.where(weight: 0) }
       base.scope :voter, lambda { |voter| vote.where(voter: voter) }
       
-      base.scope :comment, -> { type 'comment' }
+      # base.scope :comment, -> { type 'comment' }
       base.scope :parent_permlink, lambda { |parent_permlink| where(parent_permlink: parent_permlink) }
       base.scope :parent_author, lambda { |parent_author| where(parent_author: parent_author) }
       base.scope :permlink, lambda { |permlink| where(permlink: permlink) }
