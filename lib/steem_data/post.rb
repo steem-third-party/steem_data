@@ -13,7 +13,7 @@ module SteemData
     scope :second_payout, -> { mode 'second_payout' }
     scope :archived, -> { mode 'archived '}
     scope :has_zero_pending_payout, -> { where('pending_payout_value.amount' => 0) }
-    scope :has_non_zero_pending_payout, -> { has_pending_payout.where('pending_payout_value.amount' => {'$ne' => 0 }) }
+    scope :has_non_zero_pending_payout, -> { where('pending_payout_value.amount' => {'$ne' => 0 }) }
     scope :has_active_votes, -> { where(:"active_votes.0".exists => true) }
     scope :has_upvotes, lambda { |min_percent = 1| where('active_votes.percent' => {'$gte' => [min_percent, 10000].max}) }
     scope :has_downvotes, lambda { |max_percent = -1| where('active_votes.percent' => {'$lte' => [max_percent, -1].min}) }
