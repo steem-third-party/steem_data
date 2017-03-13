@@ -14,7 +14,7 @@ module SteemData
       }
       
       base.scope :today, -> { starting(1.day.ago.utc) }
-      base.scope :yesterday, -> { starting(2.days.ago.utc).starting(1.day.ago.utc, false) }
+      base.scope :yesterday, -> { starting(2.days.ago.utc).starting(1.day.ago.utc, :timestamp, false) }
     end
   end
 end
