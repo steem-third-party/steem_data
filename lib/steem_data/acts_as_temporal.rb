@@ -13,8 +13,19 @@ module SteemData
         not_inverted ? r : where(:_id.nin => r.distinct(:_id))
       }
       
-      base.scope :today, -> { starting(1.day.ago.utc) }
-      base.scope :yesterday, -> { starting(2.days.ago.utc).starting(1.day.ago.utc, :timestamp, false) }
+      base.scope :betwixt, lambda { |starting, ending, field = :timestamp, not_inverted = true|
+        r = where(field.gt => starting, field.lt => ending)
+        
+        not_inverted ? r : where(:_id.nin => r.distinct(:_id))
+      }
+      
+      base.scope :today, lambda { |field = :timestamp|
+        starting(1.day.ago.utc, field)
+      }
+      
+      base.scope :yesterday, lambda { |field = :timestamp|
+        betwixt(2.days.ago.utc, 1.day.ago.utc, field)
+      }
     end
   end
 end

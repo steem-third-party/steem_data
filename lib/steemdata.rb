@@ -15,7 +15,7 @@ module SteemData
   require 'steem_data/version'
   extend self
   
-  def load(path = nil, run_level = :production)
-    Mongoid.load!("#{File.dirname(__FILE__)}/../config/mongoid.yml", run_level)
+  def load(path = "#{File.dirname(__FILE__)}/../config/mongoid.yml", run_level = :production)
+    Mongoid.load!(path, run_level)
   end
 end
