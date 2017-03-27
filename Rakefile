@@ -28,12 +28,12 @@ task :build do
 end
 
 task :push do
-  exec "gem push steemdata-#{SteemData::VERSION}.gem"
+  exec "gem push steemdata-rb-#{SteemData::VERSION}.gem"
 end
 
 # We're not going to yank on a regular basis, but this is how it's done if you
 # really want a task for that for some reason.
 
 # task :yank do
-#   exec "gem yank steemdata -v #{SteemData::VERSION}"
+#   exec "gem yank steemdata-rb -v #{SteemData::VERSION}"
 # end
