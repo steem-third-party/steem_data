@@ -16,7 +16,7 @@ Wrapper for accessing [steemdata.com](https://steemdata.com/) in a ruby applicat
 Add the gem to your Gemfile:
 
 ```ruby
-gem 'steemdata-rb', require: 'steemdata', github: 'steem-third-party/steemdata-rb'
+gem 'steemdata-rb', require: 'steemdata'
 ```
 
 Then:

@@ -1,3 +1,3 @@
 module SteemData
-  VERSION = '0.0.1e'
+  VERSION = '0.0.1f'
 end
