@@ -20,10 +20,6 @@ module SteemData
       base.scope :tag, lambda { |tag| where('json_metadata.tags' => tag) }
       
       base.scope :transfer, -> { type 'transfer' }
-      
-      def base.average(key)
-        sum(key) / count
-      end
     end
   end
 end

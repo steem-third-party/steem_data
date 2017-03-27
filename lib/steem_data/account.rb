@@ -8,7 +8,7 @@ module SteemData
     
     scope :mined, lambda { |mined = true| where(mined: mined) }
     scope :search, lambda { |search|
-      case search.class
+      case search
       when Regexp then where(name: search)
       else; where(name: {'$regex' => ".*#{search.to_s.downcase}.*"})
       end
