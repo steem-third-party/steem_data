@@ -20,20 +20,20 @@ end
 task default: :test
 
 task :console do
-  exec "irb -r steemdata -I ./lib"
+  exec "irb -r steem_data -I ./lib"
 end
 
 task :build do
-  exec 'gem build steemdata.gemspec'
+  exec 'gem build steem_data.gemspec'
 end
 
 task :push do
-  exec "gem push steemdata-rb-#{SteemData::VERSION}.gem"
+  exec "gem push steem_data-#{SteemData::VERSION}.gem"
 end
 
 # We're not going to yank on a regular basis, but this is how it's done if you
 # really want a task for that for some reason.
 
 # task :yank do
-#   exec "gem yank steemdata-rb -v #{SteemData::VERSION}"
+#   exec "gem yank steem_data -v #{SteemData::VERSION}"
 # end

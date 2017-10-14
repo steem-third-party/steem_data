@@ -12,7 +12,7 @@ if ENV["HELL_ENABLED"] || ENV['CODECLIMATE_REPO_TOKEN']
   SimpleCov.merge_timeout 3600
 end
 
-require 'steemdata'
+require 'steem_data'
 SteemData.load
 
 require 'minitest/autorun'

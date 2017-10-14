@@ -11,6 +11,13 @@ module SteemData
     scope :mode, lambda { |mode| where(mode: mode) }
     scope :first_payout, -> { mode 'first_payout' }
     scope :second_payout, -> { mode 'second_payout' }
+    scope :pending_payout, lambda { |pending_payout|
+      if pending_payout
+        where(:cashout_time.gt => Time.now.utc)
+      else
+        where(:cashout_time.lt => Time.now.utc)
+      end
+    }
     scope :archived, -> { mode 'archived '}
     scope :has_zero_pending_payout, -> { where('pending_payout_value.amount' => 0) }
     scope :has_non_zero_pending_payout, -> { where('pending_payout_value.amount' => {'$ne' => 0 }) }
@@ -46,6 +53,10 @@ module SteemData
         
         reply['author'] == name
       end.uniq.include? true
+    end
+    
+    def pending_payout?
+      cashout_time > Time.now.utc
     end
   end
 end

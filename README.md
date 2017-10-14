@@ -1,10 +1,10 @@
-[steemdata-rb](https://github.com/steem-third-party/steemdata-rb)
+[steem_data](https://github.com/steem-third-party/steem_data)
 ============
 
 Wrapper for accessing [steemdata.com](https://steemdata.com/) in a ruby application.  It uses MongoID and ActiveModel to leverage all of the tools provided by those libraries.
 
 <center>
-  [![](https://cl.ly/0l3G3g1V4618/Image%202017-03-02%20at%2010.32.13%20AM.png)](https://github.com/steem-third-party/steemdata-rb)
+  [![](https://cl.ly/0l3G3g1V4618/Image%202017-03-02%20at%2010.32.13%20AM.png)](https://github.com/steem-third-party/steem_data)
 </center>
 
 > SteemData helps developers and researchers build better STEEM applications. We parse the STEEM blockchain for you, and provide the data as a fast and convenient MongoDB service.
@@ -16,7 +16,7 @@ Wrapper for accessing [steemdata.com](https://steemdata.com/) in a ruby applicat
 Add the gem to your Gemfile:
 
 ```ruby
-gem 'steemdata-rb', require: 'steemdata'
+gem 'steem_data'
 ```
 
 Then:
@@ -30,7 +30,7 @@ $ bundle install
 Look for a specific post using `author` and `permlink`.
 
 ```ruby
-require 'steemdata'
+require 'steem_data'
 
 SteemData.load
 
@@ -105,7 +105,7 @@ Or do the same for a particular topic.
 
 ## Get in touch!
 
-If you're using steemdata-rb, I'd love to hear from you.  Drop me a line and tell me what you think!  I'm @inertia on STEEM.
+If you're using steem_data, I'd love to hear from you.  Drop me a line and tell me what you think!  I'm @inertia on STEEM.
   
 ## License
 
