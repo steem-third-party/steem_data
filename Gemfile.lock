@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    steem_data (0.0.2)
+    steem_data (0.0.3)
       mongoid (~> 6.1, >= 6.1.0)
 
 GEM
